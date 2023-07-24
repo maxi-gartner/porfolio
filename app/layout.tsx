@@ -10,7 +10,7 @@ const links = [{
     route: "/"
   } ,{
     label: "proyectos",
-    route: "/proyectos"
+    route: "/proyectos" 
   }
   ]
 
