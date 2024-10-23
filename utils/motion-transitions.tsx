@@ -23,7 +23,7 @@ export const fadeIn = (position: string) => {
         type: "tween",
         duration: 1.4,
         delay: 0.5,
-        ease: [0.25, 0.25, 0.25, 0, 75],
+        ease: [0.25, 0.25, 0.25, 0.75], // Corregido
       },
     },
     hidden: {
@@ -34,7 +34,7 @@ export const fadeIn = (position: string) => {
         type: "tween",
         duration: 1.4,
         delay: 0.5,
-        ease: [0.25, 0.25, 0.25, 0, 75],
+        ease: [0.25, 0.25, 0.25, 0.75], // Corregido
       },
     },
   };
