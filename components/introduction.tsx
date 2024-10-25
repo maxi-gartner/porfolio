@@ -21,7 +21,7 @@ const Introduction = () => {
           />
         </div>
         <div className="flex flex-col justify-center md:max-w-md items-center w-full max-w-md">
-          <h1 className="text-2xl leading-tight text-center md:text-left md:text-4xl my-4">
+          <h1 className="text-2xl leading-tight text-center md:text-left md:text-4xl my-4 w-full">
             El código no es solo lógica,
             <TypeAnimation
               sequence={[
