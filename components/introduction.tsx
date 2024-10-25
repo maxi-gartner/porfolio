@@ -21,19 +21,19 @@ import Link from "next/link";
 const Introduction = () => {
   return (
     <div className="z-20 w-full bg-darkBg/60 pt-28 md:pt-0">
-      <div className="z-20 flex flex-col items-center w-full p-6 md:flex md:flex-row justify-evenly mg:gap-10 mt-10 md:mt-0 ">
+      <div className="z-20 flex flex-col items-center w-full p-6 md:flex md:flex-row justify-evenly pt-14 mg:px-0 mg:gap-10 h-full">
         <div className="flex justify-center">
           <Image
             src="/MaximilianoGartner.jpg"
             priority
-            width="300"
-            height="300"
+            width={300}
+            height={300}
             alt="Profile"
-            className="rounded-full"
+            className="rounded-full object-cover object-top md:w-300 hidden md:block"
           />
         </div>
         <div className="flex flex-col justify-center md:max-w-md items-center w-full">
-          <h1 className="text-2xl leading-tight text-center md:text-left md:text-4xl">
+          <h1 className="text-2xl leading-tight text-center md:text-left md:text-4xl my-4">
             El código no es solo lógica,
             <TypeAnimation
               sequence={[
@@ -119,7 +119,7 @@ const Introduction = () => {
             Scrum, usando herramientas como Trello y Jira para llevar proyectos
             al siguiente nivel.
           </p>
-          <div className="flex items-center justify-center gap-3 md:justify-start md:gap-10 mt-4 mb-32 md:mb-0">
+          <div className="flex items-center justify-center gap-3 md:justify-start md:gap-10 mt-4 mb-24 md:mb-0">
             <Link
               href="/projects"
               className="px-3 py-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50 "
