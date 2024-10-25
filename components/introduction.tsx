@@ -1,22 +1,10 @@
 "use client";
-import { FaReact, FaNodeJs, FaBootstrap, FaGitAlt } from "react-icons/fa";
-import {
-  SiRedux,
-  SiExpress,
-  SiMongodb,
-  SiFirebase,
-  SiTailwindcss,
-  SiLaravel,
-  SiPhp,
-  SiNextdotjs,
-  SiTypescript,
-  SiHtml5,
-  SiCss3,
-} from "react-icons/si";
 
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import Link from "next/link";
+import { technologies } from "@/data";
+import { FaGitAlt } from "react-icons/fa";
 
 const Introduction = () => {
   return (
@@ -54,58 +42,22 @@ const Introduction = () => {
           </h1>
           <p className="mx-auto mb-4 text-xl md:mx-0 md:mb-8">
             Hola, Soy{" "}
-            <span className="text-secondary">Gartner Maximiliano</span>,
+            <span className="text-secondary font-bold ">
+              Gartner Maximiliano
+            </span>
+            <br />
             Desarrollador Web Full Stack.
             <br />A lo largo de mi carrera, trabajé con tecnologías como:
           </p>
           <div className="flex flex-wrap gap-2 mb-4">
-            <span className="inline-flex items-center">
-              <FaReact className="text-blue-500" title="React" /> React
-            </span>
-            <span className="inline-flex items-center">
-              <SiRedux className="text-purple-600" title="Redux" /> Redux
-            </span>
-            <span className="inline-flex items-center">
-              <SiExpress className="text-black" title="Express" /> Express
-            </span>
-            <span className="inline-flex items-center">
-              <SiMongodb className="text-green-600" title="MongoDB" /> MongoDB
-            </span>
-            <span className="inline-flex items-center">
-              <FaNodeJs className="text-green-500" title="Node.js" /> Node.js
-            </span>
-            <span className="inline-flex items-center">
-              <SiPhp className="text-purple-600" title="PHP" /> PHP
-            </span>
-            <span className="inline-flex items-center">
-              <SiLaravel className="text-red-600" title="Laravel" /> Laravel
-            </span>
-            <span className="inline-flex items-center">
-              <SiNextdotjs className="text-black" title="Next.js" /> Next.js
-            </span>
-            <span className="inline-flex items-center">
-              <SiTypescript className="text-blue-600" title="TypeScript" />{" "}
-              TypeScript
-            </span>
-            <span className="inline-flex items-center">
-              <SiTailwindcss className="text-blue-400" title="Tailwind CSS" />{" "}
-              Tailwind
-            </span>
-            <span className="inline-flex items-center">
-              <FaBootstrap className="text-purple-700" title="Bootstrap" />{" "}
-              Bootstrap
-            </span>
-            <span className="inline-flex items-center">
-              <SiFirebase className="text-yellow-500" title="Firebase" />{" "}
-              Firebase
-            </span>
-            <span className="inline-flex items-center">
-              <SiHtml5 className="text-orange-600" title="HTML" /> HTML
-            </span>
-            <span className="inline-flex items-center">
-              <SiCss3 className="text-blue-600" title="CSS" /> CSS
-            </span>
+            {technologies.map((item) => (
+              <span key={item.id} className="inline-flex items-center">
+                {item.icon}
+                <span className="ml-1">{item.title}</span>
+              </span>
+            ))}
           </div>
+
           <p className="mb-2">
             Además, me manejo muy bien con
             <span className="inline-flex items-center">
@@ -122,13 +74,13 @@ const Introduction = () => {
           <div className="flex items-center justify-center gap-3 md:justify-start md:gap-10 mt-4 mb-24 md:mb-0">
             <Link
               href="/projects"
-              className="px-3 py-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50 "
+              className="px-3 py-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl font-bold  hover:shadow-white/50 "
             >
               Ver proyectos
             </Link>
             <Link
               href="/contact"
-              className="px-3 py-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50 text-secondary border-secondary"
+              className="px-3 py-2 transition-all border-2 cursor-pointer text-md w-fit rounded-xl hover:shadow-xl font-bold hover:shadow-secondary/50 text-secondary border-secondary"
             >
               Contactame
             </Link>

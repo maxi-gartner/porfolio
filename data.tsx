@@ -16,6 +16,21 @@ import {
   Speech,
 } from "lucide-react";
 
+import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
+import {
+  SiRedux,
+  SiExpress,
+  SiMongodb,
+  SiPhp,
+  SiLaravel,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiFirebase,
+  SiHtml5,
+  SiCss3,
+} from "react-icons/si";
+
 export const socialNetworks = [
   {
     id: 1,
@@ -74,6 +89,93 @@ export const itemsNavbar = [
     title: "Home",
     icon: <Speech size={25} color="#fff" strokeWidth={1} />,
     link: "/testimonials",
+  },
+];
+
+export const technologies = [
+  {
+    id: 1,
+    title: "React",
+    icon: <FaReact className="text-blue-500" title="React" />,
+    link: "/react",
+  },
+  {
+    id: 2,
+    title: "Redux",
+    icon: <SiRedux className="text-purple-600" title="Redux" />,
+    link: "/redux",
+  },
+  {
+    id: 3,
+    title: "Express",
+    icon: <SiExpress className="text-black" title="Express" />,
+    link: "/express",
+  },
+  {
+    id: 4,
+    title: "MongoDB",
+    icon: <SiMongodb className="text-green-600" title="MongoDB" />,
+    link: "/mongodb",
+  },
+  {
+    id: 5,
+    title: "Node.js",
+    icon: <FaNodeJs className="text-green-500" title="Node.js" />,
+    link: "/nodejs",
+  },
+  {
+    id: 6,
+    title: "PHP",
+    icon: <SiPhp className="text-purple-600" title="PHP" />,
+    link: "/php",
+  },
+  {
+    id: 7,
+    title: "Laravel",
+    icon: <SiLaravel className="text-red-600" title="Laravel" />,
+    link: "/laravel",
+  },
+  {
+    id: 8,
+    title: "Next.js",
+    icon: <SiNextdotjs className="text-black" title="Next.js" />,
+    link: "/nextjs",
+  },
+  {
+    id: 9,
+    title: "TypeScript",
+    icon: <SiTypescript className="text-blue-600" title="TypeScript" />,
+    link: "/typescript",
+  },
+  {
+    id: 10,
+    title: "Tailwind CSS",
+    icon: <SiTailwindcss className="text-blue-400" title="Tailwind CSS" />,
+    link: "/tailwind",
+  },
+  {
+    id: 11,
+    title: "Bootstrap",
+    icon: <FaBootstrap className="text-purple-700" title="Bootstrap" />,
+    link: "/bootstrap",
+  },
+  {
+    id: 12,
+    title: "Firebase",
+    icon: <SiFirebase className="text-yellow-500" title="Firebase" />,
+    link: "/firebase",
+  },
+  {
+    id: 13,
+    title: "HTML",
+    icon: <SiHtml5 className="text-orange-600" title="HTML" />,
+    link: "/html",
+  },
+  {
+    id: 14,
+    title: "CSS",
+    icon: <SiCss3 className="text-blue-600" title="CSS" />,
+    link: "/css",
   },
 ];
 

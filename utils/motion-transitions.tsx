@@ -1,15 +1,15 @@
 export const transitionVariantsPage = {
   initial: {
-    x: "100%",
-    width: "100%",
+    x: "100%", // Comienza fuera de la pantalla
+    opacity: 0, // Comienza invisible
   },
   animate: {
-    x: "0%",
-    width: "0%",
+    x: "0%", // Se mueve a su posición original
+    opacity: 1, // Se vuelve visible
   },
   exit: {
-    x: ["0%", "100%"],
-    width: ["0%", "100%"],
+    x: "100%", // Se mueve fuera de la pantalla
+    opacity: 0, // Se desvanece
   },
 };
 

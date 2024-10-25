@@ -56,29 +56,32 @@ export const CoverParticles = () => {
                 width: 1,
               },
               move: {
-                direction: "none",
                 enable: true,
+                speed: 1,
+                direction: "none",
+                random: true,
+                straight: true,
                 outModes: {
                   default: "bounce",
                 },
-                random: false,
-                speed: 1,
-                straight: false,
+                attract: {
+                  enable: false,
+                },
               },
               number: {
                 density: {
                   enable: true,
                 },
-                value: 80,
+                value: 150,
               },
               opacity: {
                 value: 0.5,
               },
               shape: {
-                type: "circle",
+                type: "polygon",
               },
               size: {
-                value: { min: 1, max: 5 },
+                value: 4,
               },
             },
             detectRetina: true,
