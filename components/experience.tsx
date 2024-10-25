@@ -75,7 +75,7 @@ const experience = () => {
                   ) : (
                     <CountUp
                       end={totalMonths}
-                      duration={4}
+                      duration={2}
                       onEnd={() => setCountComplete(true)}
                     />
                   )}
