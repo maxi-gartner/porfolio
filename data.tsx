@@ -70,7 +70,7 @@ export const itemsNavbar = [
     id: 2,
     title: "User",
     icon: <UserRound size={25} color="#fff" strokeWidth={1} />,
-    link: "/about-me",
+    link: "/aboutMe",
   },
   {
     id: 3,
@@ -213,35 +213,53 @@ export const dataAboutPage = [
     date: "Mar 2018",
   },
 ];
+export function calculateExperience(startDate: Date): {
+  years: number;
+  months: number;
+} {
+  const currentDate = new Date();
+
+  let years = currentDate.getFullYear() - startDate.getFullYear();
+  let months = currentDate.getMonth() - startDate.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months };
+}
 
 export const dataCounter = [
   {
     id: 0,
-    endCounter: 10,
-    text: "Años de experiencia",
+    startDate: new Date(2022, 8), // Frontend desde septiembre 2022
+    text: "Frontend",
     lineRight: true,
-    lineRightMobile: true,
   },
   {
     id: 1,
-    endCounter: 80,
-    text: "Clientes satisfechos",
+    startDate: new Date(2022, 9), // PHP desde octubre 2022
+    text: "PHP",
     lineRight: true,
-    lineRightMobile: false,
   },
   {
     id: 2,
-    endCounter: 220,
-    text: "Proyectos finalizados",
+    startDate: new Date(2023, 3), // Full Stack desde abril 2023
+    text: "Full Stack",
     lineRight: true,
-    lineRightMobile: true,
   },
   {
     id: 3,
-    endCounter: 30,
-    text: "Premios ganadores",
+    startDate: new Date(2024, 2), // TypeScript desde junio 2024
+    text: "TypeScript",
+    lineRight: true,
+  },
+  {
+    id: 4,
+    startDate: new Date(2024, 5), // Next.js desde junio 2024
+    text: "Next.js",
     lineRight: false,
-    lineRightMobile: false,
   },
 ];
 
