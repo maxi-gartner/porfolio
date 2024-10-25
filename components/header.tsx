@@ -12,8 +12,8 @@ const Header = () => {
         <div className="container justify-between max-w-6xl mx-auto md:flex sm:px-6">
           <Link href={"/"}>
             <h1 className="my-3 text-4xl font-bold text-center md:text-left">
-              Gartner Maximiliano
-              <samp className="text-secondary"> Dev</samp>
+              Developer
+              <samp className="text-secondary"> Full Stack</samp>
             </h1>
           </Link>
           <div className="flex items-center justify-center gap-7">
