@@ -1,7 +1,8 @@
 import TransitionPage from "@/components/transition-page";
 import { CoverParticles } from "@/components/cover-particles";
 import ContainerPage from "@/components/container";
-import CounterServices from "@/components/counterServices";
+import CounterServices from "@/components/experience";
+import TimeLine from "@/components/timeLine";
 
 const PageAboutMe = () => {
   return (
@@ -17,6 +18,7 @@ const PageAboutMe = () => {
             </span>
           </h1>
           <CounterServices />
+          <TimeLine />
         </ContainerPage>
       </div>
     </>

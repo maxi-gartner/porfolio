@@ -29,7 +29,28 @@ import {
   SiFirebase,
   SiHtml5,
   SiCss3,
+  SiMysql,
+  SiJavascript,
+  SiMicrosoftaccess,
+  SiCplusplus,
 } from "react-icons/si";
+
+export function calculateExperience(startDate: Date): {
+  years: number;
+  months: number;
+} {
+  const currentDate = new Date();
+
+  let years = currentDate.getFullYear() - startDate.getFullYear();
+  let months = currentDate.getMonth() - startDate.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months };
+}
 
 export const socialNetworks = [
   {
@@ -182,53 +203,93 @@ export const technologies = [
 export const dataAboutPage = [
   {
     id: 1,
-    title: "Frontend Developer",
-    subtitle: "TechSolutions",
+    title: "Programación Web en PHP y MySQL",
+    subtitle: "EducaciónIT",
     description:
-      "Colabora con un equipo dinámico para desarrollar interfaces de usuario atractivas y funcionales que impulsen el éxito de nuestros clientes en el mundo digital.",
-    date: "Nov 2023 ",
+      "Completar un curso en programación web utilizando PHP y MySQL el 13 de marzo de 2024, enfocado en el desarrollo de aplicaciones web dinámicas. Aprendí a implementar APIs y a trabajar con bases de datos relacionales.",
+    date: "Marzo 2024",
+    icons: [
+      <SiPhp key="php" style={{ color: "#4F5B93", fontSize: "2rem" }} />,
+      <SiMysql key="mysql" style={{ color: "#F29111", fontSize: "2rem" }} />,
+    ],
   },
   {
     id: 2,
-    title: "Creador de Experiencias Digitales",
-    subtitle: "PixelCrafters",
+    title: "Estudios en Next.js",
+    subtitle: "Autodidacta",
     description:
-      "Trabaja en proyectos emocionantes que desafían los límites de la creatividad y la tecnología. Únete a nosotros mientras creamos experiencias digitales cautivadoras que inspiran y cautivan a nuestros usuarios.",
-    date: "May 2021",
+      "Comencé a estudiar Next.js en mayo de 2024 para expandir mis habilidades en desarrollo frontend y crear aplicaciones web más rápidas y eficientes con características como la generación de sitios estáticos y la optimización del rendimiento.",
+    date: "Mayo 2024",
+    icons: [
+      <SiNextdotjs key="nextjs" style={{ color: "#000000" }} />,
+      <FaReact key="react" style={{ color: "#61DAFB" }} />,
+    ],
   },
   {
     id: 3,
-    title: "Especialista en Desarrollo Frontend",
-    subtitle: "CodeForge Solutions",
+    title: "Estudios en TypeScript",
+    subtitle: "Autodidacta",
     description:
-      "Como desarrollador frontend, tendrás la oportunidad de colaborar en proyectos diversos y desafiantes que te permitirán expandir tus habilidades y dejar tu huella en el mundo digital.",
-    date: "Ago 2019",
+      "Inicié mi aprendizaje de TypeScript en febrero de 2024, mejorando mi capacidad para desarrollar aplicaciones más robustas y mantenibles mediante la tipificación estática y la mejora de la productividad en el desarrollo.",
+    date: "Febrero 2024",
+    icons: [
+      <SiTypescript key="typescript" style={{ color: "#3178C6" }} />,
+      <SiJavascript key="javascript" style={{ color: "#F7DF1E" }} />,
+    ],
   },
   {
     id: 4,
-    title: "Prácticas Grado",
-    subtitle: "WebWizards Inc.",
+    title: "Educación en Base de Datos y SQL",
+    subtitle: "EducaciónIT",
     description:
-      "Únete a nosotros mientras creamos sitios web y aplicaciones interactivas que sorprenden y deleitan a nuestros clientes. Si tienes pasión por el diseño y la programación, y disfrutas colaborar en un entorno creativo, ¡queremos conocerte!        ",
-    date: "Mar 2018",
+      "Finalicé un curso sobre bases de datos y SQL el 4 de octubre de 2022, adquiriendo conocimientos fundamentales en gestión de datos. Aprendí sobre la normalización de bases de datos y la optimización de consultas.",
+    date: "Octubre 2022",
+    icons: [
+      <SiMongodb key="mongodb" style={{ color: "#4DB33D" }} />,
+      <SiMysql key="mysql" style={{ color: "#F29111", fontSize: "2rem" }} />,
+    ],
+  },
+  {
+    id: 5,
+    title: "Desarrollador Full Stack",
+    subtitle: "MindHub",
+    description:
+      "Bootcamp de 5 meses en 2023, donde adquirí habilidades en MongoDB, Express, React y Node. Trabajé en proyectos prácticos que simulan situaciones del mundo real, desarrollando tanto el frontend como el backend de aplicaciones.",
+    date: "ABRIL 2023",
+    icons: [
+      <SiMongodb key="mongodb" style={{ color: "#4DB33D" }} />,
+      <SiExpress key="express" style={{ color: "#000000" }} />,
+      <FaReact key="react" style={{ color: "#61DAFB" }} />,
+      <FaNodeJs key="nodejs" style={{ color: "#3C873A" }} />,
+    ],
+  },
+  {
+    id: 6,
+    title: "Desarrollador FrontEnd",
+    subtitle: "MindHub - Accenture",
+    description:
+      "Bootcamp de 5 meses de 2022-2023, donde aprendí HTML, CSS y JavaScript. Me enfoqué en el desarrollo de interfaces interactivas y responsivas, mejorando la experiencia del usuario en aplicaciones web.",
+    date: "AGOSTO 2022",
+    icons: [
+      <SiHtml5 key="html5" style={{ color: "#E34F26" }} />,
+      <SiCss3 key="css3" style={{ color: "#1572B6" }} />,
+      <SiJavascript key="javascript" style={{ color: "#F7DF1E" }} />,
+    ],
+  },
+  {
+    id: 7,
+    title: "Técnico Analista de Sistemas",
+    subtitle: "ISIV",
+    description:
+      "Cursado desde 2014-2019, donde obtuve conocimientos en análisis de sistemas, C++, Access,  resolución de problemas y diseño de sistemas. Desarrollé una sólida base en programación y metodologías de desarrollo.",
+    date: "2014-2019",
+    icons: [
+      <Computer key="computer" style={{ color: "#6B7280" }} />,
+      <SiMicrosoftaccess key="access" style={{ color: "#A4373A" }} />,
+      <SiCplusplus key="cplusplus" style={{ color: "#00599C" }} />,
+    ],
   },
 ];
-export function calculateExperience(startDate: Date): {
-  years: number;
-  months: number;
-} {
-  const currentDate = new Date();
-
-  let years = currentDate.getFullYear() - startDate.getFullYear();
-  let months = currentDate.getMonth() - startDate.getMonth();
-
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  return { years, months };
-}
 
 export const dataCounter = [
   {
