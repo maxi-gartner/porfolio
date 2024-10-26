@@ -95,9 +95,9 @@ export const itemsNavbar = [
   },
   {
     id: 3,
-    title: "Book",
+    title: "Projects",
     icon: <BookText size={25} color="#fff" strokeWidth={1} />,
-    link: "/services",
+    link: "/projects",
   },
   {
     id: 4,
