@@ -34,14 +34,6 @@ main {
 }
 
 /* Colores específicos para cada proyecto */
-.scrollbar-bugfix::-webkit-scrollbar-thumb {
-  background: #6300d5;
-}
-
-.scrollbar-home-essentials::-webkit-scrollbar-thumb {
-  background: #7b1fa2;
-}
-
-.scrollbar-gestor-eventos::-webkit-scrollbar-thumb {
-  background: #c6bb28;
+.scrollbar-secondary::-webkit-scrollbar-thumb {
+  background: #009688;
 }
