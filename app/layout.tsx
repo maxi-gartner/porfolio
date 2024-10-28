@@ -4,6 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Header from "@/components/header";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",

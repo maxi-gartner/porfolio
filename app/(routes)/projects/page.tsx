@@ -1,6 +1,7 @@
 import TransitionPage from "@/components/transition-page";
 import { CoverParticles } from "@/components/cover-particles";
 import ContainerPage from "@/components/container";
+import Projects from "@/components/projects";
 
 const projectsPage = () => {
   return (
@@ -10,10 +11,12 @@ const projectsPage = () => {
         <CoverParticles />
         <ContainerPage>
           <h1 className="text-2xl leading-tight text-center md:text-left md:text-5xl">
-            <span className="font-bold text-secondary">Proyectos y </span>
-            <span className="font-bold text-secondary">trabajos</span>{" "}
+            <span className="font-bold text-secondary">
+              Proyectos y trabajos
+            </span>{" "}
             terminados
           </h1>
+          <Projects />
         </ContainerPage>
       </div>
     </>
