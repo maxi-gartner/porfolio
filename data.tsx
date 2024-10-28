@@ -266,7 +266,7 @@ export const dataAboutPage = [
   {
     id: 6,
     title: "Desarrollador FrontEnd",
-    subtitle: "MindHub - Accenture",
+    subtitle: "Accenture",
     description:
       "Bootcamp de 5 meses de 2022-2023, donde aprendí HTML, CSS y JavaScript. Me enfoqué en el desarrollo de interfaces interactivas y responsivas, mejorando la experiencia del usuario en aplicaciones web.",
     date: "AGOSTO 2022",
