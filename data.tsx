@@ -1,8 +1,4 @@
 import {
-  BookText,
-  CodeSquare,
-  HomeIcon,
-  UserRound,
   Linkedin,
   Twitter,
   Rss,
@@ -13,7 +9,10 @@ import {
   Computer,
   Book,
   Rocket,
-  Speech,
+  Mail,
+  HomeIcon,
+  UserRound,
+  FolderOpen,
 } from "lucide-react";
 
 import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
@@ -96,20 +95,14 @@ export const itemsNavbar = [
   {
     id: 3,
     title: "Projects",
-    icon: <BookText size={25} color="#fff" strokeWidth={1} />,
+    icon: <FolderOpen size={25} color="#fff" strokeWidth={1} />, // Cambiado a FolderOpen
     link: "/projects",
   },
   {
-    id: 4,
-    title: "Target",
-    icon: <CodeSquare size={25} color="#fff" strokeWidth={1} />,
-    link: "/portfolio",
-  },
-  {
     id: 5,
-    title: "Home",
-    icon: <Speech size={25} color="#fff" strokeWidth={1} />,
-    link: "/testimonials",
+    title: "Contact",
+    icon: <Mail size={25} color="#fff" strokeWidth={1} />, // Cambiado a Mail
+    link: "/Contact",
   },
 ];
 
