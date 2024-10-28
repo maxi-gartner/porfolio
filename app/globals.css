@@ -19,3 +19,29 @@ main {
     text-wrap: balance;
   }
 }
+
+/* Estilos de la scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* Color del track */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px; /* Bordes redondeados del thumb */
+}
+
+/* Colores específicos para cada proyecto */
+.scrollbar-bugfix::-webkit-scrollbar-thumb {
+  background: #6300d5;
+}
+
+.scrollbar-home-essentials::-webkit-scrollbar-thumb {
+  background: #7b1fa2;
+}
+
+.scrollbar-gestor-eventos::-webkit-scrollbar-thumb {
+  background: #c6bb28;
+}

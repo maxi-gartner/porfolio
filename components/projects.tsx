@@ -7,18 +7,21 @@ const projects = [
     description: "E-comerce Informatico",
     url: "https://bug-1wmh25i6o-maxigartners-projects.vercel.app/",
     imgSrc: "/bug-fix.png", // Asegúrate de la ruta correcta
+    scrollbarClass: "scrollbar-bugfix", // Clase para scrollbar
   },
   {
     name: "Home Essentials",
     description: "E-comerce Venta de articulos de hogar",
     url: "https://home-essentials-front-dev-propia-erzjk9ssi.vercel.app/",
     imgSrc: "/homeEssentials.png",
+    scrollbarClass: "scrollbar-home-essentials", // Clase para scrollbar
   },
   {
     name: "Gestor De Eventos",
     description: "Gestion y organizacion de eventos",
     url: "https://gestor-de-eventos-front.vercel.app/",
     imgSrc: "/gestorDeEventos.png",
+    scrollbarClass: "scrollbar-gestor-eventos", // Clase para scrollbar
   },
 ];
 
@@ -40,7 +43,9 @@ export default function WebApp() {
                 {project.description}
               </h1>
             </div>
-            <div className="w-full max-w-sm bg-white rounded-xl min-h-96 sm:min-h-auto h-[35rem] border-4 border-black relative mb-10 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] transition-transform duration-300 overflow-y-auto scrollbar scrollbar-thumb-fuchsia-800 scrollbar-track-black">
+            <div
+              className={`w-full max-w-sm bg-white rounded-xl min-h-96 sm:min-h-auto h-[35rem] border-4 border-black relative mb-10 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] transition-transform duration-300 overflow-y-auto scrollbar ${project.scrollbarClass}`}
+            >
               <Image
                 src={project.imgSrc}
                 className="w-full h-auto object-cover rounded-xl"
