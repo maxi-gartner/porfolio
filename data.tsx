@@ -102,7 +102,7 @@ export const itemsNavbar = [
     id: 5,
     title: "Contact",
     icon: <Mail size={25} color="#fff" strokeWidth={1} />, // Cambiado a Mail
-    link: "/Contact",
+    link: "/contact",
   },
 ];
 
