@@ -51,6 +51,28 @@ export function calculateExperience(startDate: Date): {
   return { years, months };
 }
 
+export const projects = [
+  {
+    description: "E-commerce Informatico",
+    logo: "/bug_fix_logo.png",
+    secondLogo: "/bugFixTitle2.png",
+    url: "https://bug-1wmh25i6o-maxigartners-projects.vercel.app/",
+    imgSrc: "/bug-fix.png",
+  },
+  {
+    description: "E-commerce Articulos de Hogar",
+    logo: "/HELogo.png",
+    url: "https://home-essentials-front-dev-propia-erzjk9ssi.vercel.app/",
+    imgSrc: "/homeEssentials.png",
+  },
+  {
+    description: "Gestión y Organización de eventos",
+    logo: "/gestorDeEventosFilter.png",
+    url: "https://gestor-de-eventos-front.vercel.app/",
+    imgSrc: "/gestorDeEventos.png",
+  },
+];
+
 export const socialNetworks = [
   {
     id: 1,
