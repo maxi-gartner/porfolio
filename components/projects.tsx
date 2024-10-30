@@ -34,6 +34,11 @@ export default function WebApp() {
               <h2 className="text-xl py-1 md:py-0 text-center text-secondary mb-2 md:font-semibold group-hover:-translate-y-2 transition-transform duration-300">
                 {project.description}
               </h2>
+              <h2 className="text-xl py-1 md:py-0 text-center text-secondary mb-2 md:font-semibold group-hover:-translate-y-2 transition-transform duration-300 flex justify-center gap-2">
+                {project.technologies.map((technology, index) => (
+                  <span key={index}>{technology}</span>
+                ))}
+              </h2>
             </div>
             <div className="w-full max-w-sm rounded-xl h-[35rem] border-4 border-black relative mb-10 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] transition-transform duration-300 overflow-y-auto scrollbar scrollbar-secondary bg-black group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] group-hover:scale-105">
               <Image

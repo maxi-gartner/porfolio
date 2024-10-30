@@ -1,55 +1,37 @@
-import {
-  Linkedin,
-  Twitter,
-  Rss,
-  Twitch,
-  Youtube,
-  Crop,
-  Pencil,
-  Computer,
-  Book,
-  Rocket,
-  Mail,
-  HomeIcon,
-  UserRound,
-  FolderOpen,
-} from "lucide-react";
+import { Computer, Mail, HomeIcon, UserRound, FolderOpen } from "lucide-react";
 
-import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
 import {
-  SiRedux,
-  SiExpress,
-  SiMongodb,
-  SiPhp,
-  SiLaravel,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiFirebase,
-  SiHtml5,
-  SiCss3,
+  FaReact,
+  FaNodeJs,
+  FaBootstrap,
+  FaLinkedin,
+  FaTwitter,
+  //FaTwitch,
+  FaYoutube,
+  //FaRss,
+} from "react-icons/fa";
+import {
   SiMysql,
-  SiJavascript,
   SiMicrosoftaccess,
   SiCplusplus,
+  SiPhp,
+  SiLaravel,
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiBootstrap,
+  SiFirebase,
+  SiReact,
+  SiRedux,
+  SiAxios,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiJsonwebtokens,
+  SiNextdotjs,
 } from "react-icons/si";
-
-export function calculateExperience(startDate: Date): {
-  years: number;
-  months: number;
-} {
-  const currentDate = new Date();
-
-  let years = currentDate.getFullYear() - startDate.getFullYear();
-  let months = currentDate.getMonth() - startDate.getMonth();
-
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  return { years, months };
-}
 
 export const projects = [
   {
@@ -58,46 +40,123 @@ export const projects = [
     secondLogo: "/bugFixTitle2.png",
     url: "https://bug-1wmh25i6o-maxigartners-projects.vercel.app/",
     imgSrc: "/bug-fix.png",
+    technologies: [
+      <SiHtml5 key="html" style={{ color: "#E34F26", fontSize: "2rem" }} />,
+      <SiCss3 key="css" style={{ color: "#1572B6", fontSize: "2rem" }} />,
+      <SiJavascript
+        key="javascript"
+        style={{ color: "#F7DF1E", fontSize: "2rem" }}
+      />,
+      <SiBootstrap
+        key="bootstrap"
+        style={{ color: "#563D7C", fontSize: "2rem" }}
+      />,
+      <SiFirebase
+        key="firebase"
+        style={{ color: "#FFCA28", fontSize: "2rem" }}
+      />,
+    ],
   },
   {
     description: "E-commerce Articulos de Hogar",
     logo: "/HELogo.png",
     url: "https://home-essentials-front-dev-propia-erzjk9ssi.vercel.app/",
     imgSrc: "/homeEssentials.png",
+    technologies: [
+      <SiReact key="react" style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <SiRedux key="redux" style={{ color: "#764ABC", fontSize: "2rem" }} />,
+      <SiAxios key="axios" style={{ color: "#5A29E3", fontSize: "2rem" }} />,
+      <SiTailwindcss
+        key="tailwind"
+        style={{ color: "#38B2AC", fontSize: "2rem" }}
+      />,
+      <SiNodedotjs
+        key="nodejs"
+        style={{ color: "#8CC84B", fontSize: "2rem" }}
+      />,
+      <SiExpress
+        key="express"
+        style={{ color: "#000000", fontSize: "2rem" }}
+      />,
+      <SiMongodb
+        key="mongodb"
+        style={{ color: "#47A248", fontSize: "2rem" }}
+      />,
+      <SiJsonwebtokens
+        key="bcrypt"
+        style={{ color: "#D9D9D9", fontSize: "2rem" }}
+      />,
+    ],
   },
   {
     description: "Gestión y Organización de eventos",
     logo: "/gestorDeEventosFilter.png",
     url: "https://gestor-de-eventos-front.vercel.app/",
     imgSrc: "/gestorDeEventos.png",
+    technologies: [
+      <SiReact key="react" style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <SiRedux key="redux" style={{ color: "#764ABC", fontSize: "2rem" }} />,
+      <SiAxios key="axios" style={{ color: "#5A29E3", fontSize: "2rem" }} />,
+      <SiTailwindcss
+        key="tailwind"
+        style={{ color: "#38B2AC", fontSize: "2rem" }}
+      />,
+      <SiNodedotjs
+        key="nodejs"
+        style={{ color: "#8CC84B", fontSize: "2rem" }}
+      />,
+      <SiExpress
+        key="express"
+        style={{ color: "#000000", fontSize: "2rem" }}
+      />,
+      <SiMongodb
+        key="mongodb"
+        style={{ color: "#47A248", fontSize: "2rem" }}
+      />,
+      <SiJsonwebtokens
+        key="jwt"
+        style={{ color: "#000000", fontSize: "2rem" }}
+      />,
+    ],
+  },
+  {
+    description: "Portafolio Personal",
+    logo: "/PorfolioTitle.png",
+    url: "/",
+    imgSrc: "/porfolioIMG.png",
+    technologies: [
+      <SiNextdotjs
+        key="nextjs"
+        style={{ color: "#000000", fontSize: "2rem" }}
+      />,
+      <SiReact key="react" style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <SiTailwindcss
+        key="tailwind"
+        style={{ color: "#38B2AC", fontSize: "2rem" }}
+      />,
+      <SiTypescript
+        key="typescript"
+        style={{ color: "#007ACC", fontSize: "2rem" }}
+      />,
+    ],
   },
 ];
 
 export const socialNetworks = [
   {
     id: 1,
-    logo: <Youtube size={30} strokeWidth={1} />,
-    src: "#!",
+    logo: <FaYoutube size={30} strokeWidth={1} />,
+    src: "https://www.youtube.com/@ReactiveMERN",
   },
   {
     id: 2,
-    logo: <Linkedin size={30} strokeWidth={1} />,
-    src: "#!",
+    logo: <FaLinkedin size={30} strokeWidth={1} />,
+    src: "https://www.linkedin.com/in/maxi-gartner/",
   },
   {
     id: 3,
-    logo: <Twitter size={30} strokeWidth={1} />,
-    src: "#!",
-  },
-  {
-    id: 4,
-    logo: <Rss size={30} strokeWidth={1} />,
-    src: "#!",
-  },
-  {
-    id: 5,
-    logo: <Twitch size={30} strokeWidth={1} />,
-    src: "#!",
+    logo: <FaTwitter size={30} strokeWidth={1} />,
+    src: "https://x.com/reactiveMERN",
   },
 ];
 
@@ -132,85 +191,136 @@ export const technologies = [
   {
     id: 1,
     title: "React",
-    icon: <FaReact className="text-blue-500" title="React" />,
+    icon: (
+      <FaReact style={{ color: "#61DAFB", fontSize: "2rem" }} title="React" />
+    ),
     link: "/react",
   },
   {
     id: 2,
     title: "Redux",
-    icon: <SiRedux className="text-purple-600" title="Redux" />,
+    icon: (
+      <SiRedux style={{ color: "#764ABC", fontSize: "2rem" }} title="Redux" />
+    ),
     link: "/redux",
   },
   {
     id: 3,
     title: "Express",
-    icon: <SiExpress className="text-black" title="Express" />,
+    icon: (
+      <SiExpress
+        style={{ color: "#000000", fontSize: "2rem" }}
+        title="Express"
+      />
+    ),
     link: "/express",
   },
   {
     id: 4,
     title: "MongoDB",
-    icon: <SiMongodb className="text-green-600" title="MongoDB" />,
+    icon: (
+      <SiMongodb
+        style={{ color: "#47A248", fontSize: "2rem" }}
+        title="MongoDB"
+      />
+    ),
     link: "/mongodb",
   },
   {
     id: 5,
     title: "Node.js",
-    icon: <FaNodeJs className="text-green-500" title="Node.js" />,
+    icon: (
+      <FaNodeJs
+        style={{ color: "#339933", fontSize: "2rem" }}
+        title="Node.js"
+      />
+    ),
     link: "/nodejs",
   },
   {
     id: 6,
     title: "PHP",
-    icon: <SiPhp className="text-purple-600" title="PHP" />,
+    icon: <SiPhp style={{ color: "#8892BF", fontSize: "2rem" }} title="PHP" />,
     link: "/php",
   },
   {
     id: 7,
     title: "Laravel",
-    icon: <SiLaravel className="text-red-600" title="Laravel" />,
+    icon: (
+      <SiLaravel
+        style={{ color: "#FF2D20", fontSize: "2rem" }}
+        title="Laravel"
+      />
+    ),
     link: "/laravel",
   },
   {
     id: 8,
     title: "Next.js",
-    icon: <SiNextdotjs className="text-black" title="Next.js" />,
+    icon: (
+      <SiNextdotjs
+        style={{ color: "#000000", fontSize: "2rem" }}
+        title="Next.js"
+      />
+    ),
     link: "/nextjs",
   },
   {
     id: 9,
     title: "TypeScript",
-    icon: <SiTypescript className="text-blue-600" title="TypeScript" />,
+    icon: (
+      <SiTypescript
+        style={{ color: "#3178C6", fontSize: "2rem" }}
+        title="TypeScript"
+      />
+    ),
     link: "/typescript",
   },
   {
     id: 10,
     title: "Tailwind CSS",
-    icon: <SiTailwindcss className="text-blue-400" title="Tailwind CSS" />,
+    icon: (
+      <SiTailwindcss
+        style={{ color: "#38B2AC", fontSize: "2rem" }}
+        title="Tailwind CSS"
+      />
+    ),
     link: "/tailwind",
   },
   {
     id: 11,
     title: "Bootstrap",
-    icon: <FaBootstrap className="text-purple-700" title="Bootstrap" />,
+    icon: (
+      <FaBootstrap
+        style={{ color: "#7952B3", fontSize: "2rem" }}
+        title="Bootstrap"
+      />
+    ),
     link: "/bootstrap",
   },
   {
     id: 12,
     title: "Firebase",
-    icon: <SiFirebase className="text-yellow-500" title="Firebase" />,
+    icon: (
+      <SiFirebase
+        style={{ color: "#FFA611", fontSize: "2rem" }}
+        title="Firebase"
+      />
+    ),
     link: "/firebase",
   },
   {
     id: 13,
     title: "HTML",
-    icon: <SiHtml5 className="text-orange-600" title="HTML" />,
+    icon: (
+      <SiHtml5 style={{ color: "#E34F26", fontSize: "2rem" }} title="HTML" />
+    ),
     link: "/html",
   },
   {
     id: 14,
     title: "CSS",
-    icon: <SiCss3 className="text-blue-600" title="CSS" />,
+    icon: <SiCss3 style={{ color: "#1572B6", fontSize: "2rem" }} title="CSS" />,
     link: "/css",
   },
 ];
@@ -339,139 +449,19 @@ export const dataCounter = [
   },
 ];
 
-export const serviceData = [
-  {
-    icon: <Crop />,
-    title: "Branding",
-    description:
-      "Desarrollo de una identidad de marca sólida y coherente, incluyendo diseño de logotipo, colores y elementos visuales",
-  },
-  {
-    icon: <Pencil />,
-    title: "Diseño web",
-    description:
-      "Diseño creativo y profesional de interfaces web intuitivas y atractivas, centradas en la experiencia del usuario",
-  },
-  {
-    icon: <Computer />,
-    title: "Desarrollo web",
-    description:
-      "Diseño y desarrollo de sitios web a medida, adaptados a tus necesidades",
-  },
-  {
-    icon: <Book />,
-    title: "Copywriting",
-    description:
-      "Creación de contenido persuasivo y atractivo que capta la atención de tu audiencia",
-  },
-  {
-    icon: <Rocket />,
-    title: "SEO",
-    description:
-      "Optimización de tu presencia en línea mediante estrategias de SEO avanzadas, ",
-  },
-];
+export function calculateExperience(startDate: Date): {
+  years: number;
+  months: number;
+} {
+  const currentDate = new Date();
 
-export const dataPortfolio = [
-  {
-    id: 1,
-    title: "Web Pro",
-    image: "/image-1.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-  {
-    id: 2,
-    title: "Desarrollo Web Ágil",
-    image: "/image-2.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-  {
-    id: 3,
-    title: "Estrategias Web",
-    image: "/image-3.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-  {
-    id: 4,
-    title: "Ideas Creativas",
-    image: "/image-4.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-  {
-    id: 5,
-    title: "Webs Impactantes",
-    image: "/image-5.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-  {
-    id: 6,
-    title: "Web Dinámica",
-    image: "/image-6.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-  {
-    id: 7,
-    title: "Dark Web ",
-    image: "/image-7.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-  {
-    id: 8,
-    title: "E-commerce web",
-    image: "/image-8.jpg",
-    urlGithub: "#!",
-    urlDemo: "#!",
-  },
-];
+  let years = currentDate.getFullYear() - startDate.getFullYear();
+  let months = currentDate.getMonth() - startDate.getMonth();
 
-export const dataTestimonials = [
-  {
-    id: 1,
-    name: "George Snow",
-    description:
-      "¡Increíble plataforma! Los testimonios aquí son genuinos y me han ayudado a tomar decisiones informadas. ¡Altamente recomendado!",
-    imageUrl: "/profile1.png",
-  },
-  {
-    id: 2,
-    name: "Juan Pérez",
-    description:
-      "Me encanta la variedad de testimonios disponibles en esta página. Es inspirador ver cómo otras personas han superado desafíos similares a los míos. ¡Gracias por esta invaluable fuente de motivación!",
-    imageUrl: "/profile2.png",
-  },
-  {
-    id: 3,
-    name: "María García",
-    description:
-      "Excelente recurso para obtener opiniones auténticas sobre diferentes productos y servicios. Me ha ayudado mucho en mis compras en línea. ¡Bravo por este sitio!",
-    imageUrl: "/profile3.png",
-  },
-  {
-    id: 4,
-    name: "Laura Snow",
-    description:
-      "¡Qué descubrimiento tan fantástico! Los testimonios aquí son honestos y detallados. Me siento más seguro al tomar decisiones después de leer las experiencias compartidas por otros usuarios.",
-    imageUrl: "/profile4.png",
-  },
-  {
-    id: 5,
-    name: "Carlos Sánchez",
-    description:
-      "Una joya en la web. Los testimonios son fáciles de encontrar y están bien organizados. ¡Definitivamente mi destino número uno cuando necesito referencias confiables!",
-    imageUrl: "/profile5.png",
-  },
-  {
-    id: 6,
-    name: "Antonio Martínez",
-    description:
-      "¡Fantástico recurso para aquellos que buscan validación antes de tomar decisiones importantes! Los testimonios aquí son veraces y realmente útiles. ¡Gracias por simplificar mi proceso de toma de decisiones!",
-    imageUrl: "/profile6.png",
-  },
-];
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months };
+}
