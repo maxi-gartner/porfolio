@@ -1,4 +1,4 @@
-import { Computer, Mail, HomeIcon, UserRound, FolderOpen } from "lucide-react";
+import { Computer, Mail, HomeIcon, UserRound, FolderOpen } from "lucide-react"
 
 import {
   FaReact,
@@ -9,7 +9,7 @@ import {
   //FaTwitch,
   FaYoutube,
   //FaRss,
-} from "react-icons/fa";
+} from "react-icons/fa"
 import {
   SiMysql,
   SiMicrosoftaccess,
@@ -31,28 +31,28 @@ import {
   SiMongodb,
   SiJsonwebtokens,
   SiNextdotjs,
-} from "react-icons/si";
+} from "react-icons/si"
 
 export const projects = [
   {
     description: "E-commerce Informatico",
     logo: "/bug_fix_logo.png",
     secondLogo: "/bugFixTitle2.png",
-    url: "https://bug-1wmh25i6o-maxigartners-projects.vercel.app/",
+    url: "https://bug-fix-two.vercel.app/",
     imgSrc: "/bug-fix.png",
     technologies: [
-      <SiHtml5 key="html" style={{ color: "#E34F26", fontSize: "2rem" }} />,
-      <SiCss3 key="css" style={{ color: "#1572B6", fontSize: "2rem" }} />,
+      <SiHtml5 key='html' style={{ color: "#E34F26", fontSize: "2rem" }} />,
+      <SiCss3 key='css' style={{ color: "#1572B6", fontSize: "2rem" }} />,
       <SiJavascript
-        key="javascript"
+        key='javascript'
         style={{ color: "#F7DF1E", fontSize: "2rem" }}
       />,
       <SiBootstrap
-        key="bootstrap"
+        key='bootstrap'
         style={{ color: "#563D7C", fontSize: "2rem" }}
       />,
       <SiFirebase
-        key="firebase"
+        key='firebase'
         style={{ color: "#FFCA28", fontSize: "2rem" }}
       />,
     ],
@@ -60,30 +60,30 @@ export const projects = [
   {
     description: "E-commerce Articulos de Hogar",
     logo: "/HELogo.png",
-    url: "https://home-essentials-front-dev-propia-erzjk9ssi.vercel.app/",
+    url: "https://home-essentials-front-dev-propia.vercel.app/",
     imgSrc: "/homeEssentials.png",
     technologies: [
-      <SiReact key="react" style={{ color: "#61DAFB", fontSize: "2rem" }} />,
-      <SiRedux key="redux" style={{ color: "#764ABC", fontSize: "2rem" }} />,
-      <SiAxios key="axios" style={{ color: "#5A29E3", fontSize: "2rem" }} />,
+      <SiReact key='react' style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <SiRedux key='redux' style={{ color: "#764ABC", fontSize: "2rem" }} />,
+      <SiAxios key='axios' style={{ color: "#5A29E3", fontSize: "2rem" }} />,
       <SiTailwindcss
-        key="tailwind"
+        key='tailwind'
         style={{ color: "#38B2AC", fontSize: "2rem" }}
       />,
       <SiNodedotjs
-        key="nodejs"
+        key='nodejs'
         style={{ color: "#8CC84B", fontSize: "2rem" }}
       />,
       <SiExpress
-        key="express"
+        key='express'
         style={{ color: "#000000", fontSize: "2rem" }}
       />,
       <SiMongodb
-        key="mongodb"
+        key='mongodb'
         style={{ color: "#47A248", fontSize: "2rem" }}
       />,
       <SiJsonwebtokens
-        key="bcrypt"
+        key='bcrypt'
         style={{ color: "#D9D9D9", fontSize: "2rem" }}
       />,
     ],
@@ -94,27 +94,27 @@ export const projects = [
     url: "https://gestor-de-eventos-front.vercel.app/",
     imgSrc: "/gestorDeEventos.png",
     technologies: [
-      <SiReact key="react" style={{ color: "#61DAFB", fontSize: "2rem" }} />,
-      <SiRedux key="redux" style={{ color: "#764ABC", fontSize: "2rem" }} />,
-      <SiAxios key="axios" style={{ color: "#5A29E3", fontSize: "2rem" }} />,
+      <SiReact key='react' style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <SiRedux key='redux' style={{ color: "#764ABC", fontSize: "2rem" }} />,
+      <SiAxios key='axios' style={{ color: "#5A29E3", fontSize: "2rem" }} />,
       <SiTailwindcss
-        key="tailwind"
+        key='tailwind'
         style={{ color: "#38B2AC", fontSize: "2rem" }}
       />,
       <SiNodedotjs
-        key="nodejs"
+        key='nodejs'
         style={{ color: "#8CC84B", fontSize: "2rem" }}
       />,
       <SiExpress
-        key="express"
+        key='express'
         style={{ color: "#000000", fontSize: "2rem" }}
       />,
       <SiMongodb
-        key="mongodb"
+        key='mongodb'
         style={{ color: "#47A248", fontSize: "2rem" }}
       />,
       <SiJsonwebtokens
-        key="jwt"
+        key='jwt'
         style={{ color: "#000000", fontSize: "2rem" }}
       />,
     ],
@@ -126,21 +126,21 @@ export const projects = [
     imgSrc: "/porfolioIMG.png",
     technologies: [
       <SiNextdotjs
-        key="nextjs"
+        key='nextjs'
         style={{ color: "#000000", fontSize: "2rem" }}
       />,
-      <SiReact key="react" style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <SiReact key='react' style={{ color: "#61DAFB", fontSize: "2rem" }} />,
       <SiTailwindcss
-        key="tailwind"
+        key='tailwind'
         style={{ color: "#38B2AC", fontSize: "2rem" }}
       />,
       <SiTypescript
-        key="typescript"
+        key='typescript'
         style={{ color: "#007ACC", fontSize: "2rem" }}
       />,
     ],
   },
-];
+]
 
 export const socialNetworks = [
   {
@@ -158,41 +158,41 @@ export const socialNetworks = [
     logo: <FaTwitter size={30} strokeWidth={1} />,
     src: "https://x.com/reactiveMERN",
   },
-];
+]
 
 export const itemsNavbar = [
   {
     id: 1,
     title: "Home",
-    icon: <HomeIcon size={25} color="#fff" strokeWidth={1} />,
+    icon: <HomeIcon size={25} color='#fff' strokeWidth={1} />,
     link: "/",
   },
   {
     id: 2,
     title: "User",
-    icon: <UserRound size={25} color="#fff" strokeWidth={1} />,
+    icon: <UserRound size={25} color='#fff' strokeWidth={1} />,
     link: "/aboutMe",
   },
   {
     id: 3,
     title: "Projects",
-    icon: <FolderOpen size={25} color="#fff" strokeWidth={1} />, // Cambiado a FolderOpen
+    icon: <FolderOpen size={25} color='#fff' strokeWidth={1} />, // Cambiado a FolderOpen
     link: "/projects",
   },
   {
     id: 5,
     title: "Contact",
-    icon: <Mail size={25} color="#fff" strokeWidth={1} />, // Cambiado a Mail
+    icon: <Mail size={25} color='#fff' strokeWidth={1} />, // Cambiado a Mail
     link: "/contact",
   },
-];
+]
 
 export const technologies = [
   {
     id: 1,
     title: "React",
     icon: (
-      <FaReact style={{ color: "#61DAFB", fontSize: "2rem" }} title="React" />
+      <FaReact style={{ color: "#61DAFB", fontSize: "2rem" }} title='React' />
     ),
     link: "/react",
   },
@@ -200,7 +200,7 @@ export const technologies = [
     id: 2,
     title: "Redux",
     icon: (
-      <SiRedux style={{ color: "#764ABC", fontSize: "2rem" }} title="Redux" />
+      <SiRedux style={{ color: "#764ABC", fontSize: "2rem" }} title='Redux' />
     ),
     link: "/redux",
   },
@@ -210,7 +210,7 @@ export const technologies = [
     icon: (
       <SiExpress
         style={{ color: "#000000", fontSize: "2rem" }}
-        title="Express"
+        title='Express'
       />
     ),
     link: "/express",
@@ -221,7 +221,7 @@ export const technologies = [
     icon: (
       <SiMongodb
         style={{ color: "#47A248", fontSize: "2rem" }}
-        title="MongoDB"
+        title='MongoDB'
       />
     ),
     link: "/mongodb",
@@ -232,7 +232,7 @@ export const technologies = [
     icon: (
       <FaNodeJs
         style={{ color: "#339933", fontSize: "2rem" }}
-        title="Node.js"
+        title='Node.js'
       />
     ),
     link: "/nodejs",
@@ -240,7 +240,7 @@ export const technologies = [
   {
     id: 6,
     title: "PHP",
-    icon: <SiPhp style={{ color: "#8892BF", fontSize: "2rem" }} title="PHP" />,
+    icon: <SiPhp style={{ color: "#8892BF", fontSize: "2rem" }} title='PHP' />,
     link: "/php",
   },
   {
@@ -249,7 +249,7 @@ export const technologies = [
     icon: (
       <SiLaravel
         style={{ color: "#FF2D20", fontSize: "2rem" }}
-        title="Laravel"
+        title='Laravel'
       />
     ),
     link: "/laravel",
@@ -260,7 +260,7 @@ export const technologies = [
     icon: (
       <SiNextdotjs
         style={{ color: "#000000", fontSize: "2rem" }}
-        title="Next.js"
+        title='Next.js'
       />
     ),
     link: "/nextjs",
@@ -271,7 +271,7 @@ export const technologies = [
     icon: (
       <SiTypescript
         style={{ color: "#3178C6", fontSize: "2rem" }}
-        title="TypeScript"
+        title='TypeScript'
       />
     ),
     link: "/typescript",
@@ -282,7 +282,7 @@ export const technologies = [
     icon: (
       <SiTailwindcss
         style={{ color: "#38B2AC", fontSize: "2rem" }}
-        title="Tailwind CSS"
+        title='Tailwind CSS'
       />
     ),
     link: "/tailwind",
@@ -293,7 +293,7 @@ export const technologies = [
     icon: (
       <FaBootstrap
         style={{ color: "#7952B3", fontSize: "2rem" }}
-        title="Bootstrap"
+        title='Bootstrap'
       />
     ),
     link: "/bootstrap",
@@ -304,7 +304,7 @@ export const technologies = [
     icon: (
       <SiFirebase
         style={{ color: "#FFA611", fontSize: "2rem" }}
-        title="Firebase"
+        title='Firebase'
       />
     ),
     link: "/firebase",
@@ -313,17 +313,17 @@ export const technologies = [
     id: 13,
     title: "HTML",
     icon: (
-      <SiHtml5 style={{ color: "#E34F26", fontSize: "2rem" }} title="HTML" />
+      <SiHtml5 style={{ color: "#E34F26", fontSize: "2rem" }} title='HTML' />
     ),
     link: "/html",
   },
   {
     id: 14,
     title: "CSS",
-    icon: <SiCss3 style={{ color: "#1572B6", fontSize: "2rem" }} title="CSS" />,
+    icon: <SiCss3 style={{ color: "#1572B6", fontSize: "2rem" }} title='CSS' />,
     link: "/css",
   },
-];
+]
 
 export const dataAboutPage = [
   {
@@ -334,8 +334,8 @@ export const dataAboutPage = [
       "Completar un curso en programación web utilizando PHP y MySQL el 13 de marzo de 2024, enfocado en el desarrollo de aplicaciones web dinámicas. Aprendí a implementar APIs y a trabajar con bases de datos relacionales.",
     date: "Marzo 2024",
     icons: [
-      <SiPhp key="php" style={{ color: "#4F5B93", fontSize: "2rem" }} />,
-      <SiMysql key="mysql" style={{ color: "#F29111", fontSize: "2rem" }} />,
+      <SiPhp key='php' style={{ color: "#4F5B93", fontSize: "2rem" }} />,
+      <SiMysql key='mysql' style={{ color: "#F29111", fontSize: "2rem" }} />,
     ],
   },
   {
@@ -346,8 +346,8 @@ export const dataAboutPage = [
       "Comencé a estudiar Next.js en mayo de 2024 para expandir mis habilidades en desarrollo frontend y crear aplicaciones web más rápidas y eficientes con características como la generación de sitios estáticos y la optimización del rendimiento.",
     date: "Mayo 2024",
     icons: [
-      <SiNextdotjs key="nextjs" style={{ color: "#000000" }} />,
-      <FaReact key="react" style={{ color: "#61DAFB" }} />,
+      <SiNextdotjs key='nextjs' style={{ color: "#000000" }} />,
+      <FaReact key='react' style={{ color: "#61DAFB" }} />,
     ],
   },
   {
@@ -358,8 +358,8 @@ export const dataAboutPage = [
       "Inicié mi aprendizaje de TypeScript en febrero de 2024, mejorando mi capacidad para desarrollar aplicaciones más robustas y mantenibles mediante la tipificación estática y la mejora de la productividad en el desarrollo.",
     date: "Febrero 2024",
     icons: [
-      <SiTypescript key="typescript" style={{ color: "#3178C6" }} />,
-      <SiJavascript key="javascript" style={{ color: "#F7DF1E" }} />,
+      <SiTypescript key='typescript' style={{ color: "#3178C6" }} />,
+      <SiJavascript key='javascript' style={{ color: "#F7DF1E" }} />,
     ],
   },
   {
@@ -370,8 +370,8 @@ export const dataAboutPage = [
       "Finalicé un curso sobre bases de datos y SQL el 4 de octubre de 2022, adquiriendo conocimientos fundamentales en gestión de datos. Aprendí sobre la normalización de bases de datos y la optimización de consultas.",
     date: "Octubre 2022",
     icons: [
-      <SiMongodb key="mongodb" style={{ color: "#4DB33D" }} />,
-      <SiMysql key="mysql" style={{ color: "#F29111", fontSize: "2rem" }} />,
+      <SiMongodb key='mongodb' style={{ color: "#4DB33D" }} />,
+      <SiMysql key='mysql' style={{ color: "#F29111", fontSize: "2rem" }} />,
     ],
   },
   {
@@ -382,10 +382,10 @@ export const dataAboutPage = [
       "Bootcamp de 5 meses en 2023, donde adquirí habilidades en MongoDB, Express, React y Node. Trabajé en proyectos prácticos que simulan situaciones del mundo real, desarrollando tanto el frontend como el backend de aplicaciones.",
     date: "ABRIL 2023",
     icons: [
-      <SiMongodb key="mongodb" style={{ color: "#4DB33D" }} />,
-      <SiExpress key="express" style={{ color: "#000000" }} />,
-      <FaReact key="react" style={{ color: "#61DAFB" }} />,
-      <FaNodeJs key="nodejs" style={{ color: "#3C873A" }} />,
+      <SiMongodb key='mongodb' style={{ color: "#4DB33D" }} />,
+      <SiExpress key='express' style={{ color: "#000000" }} />,
+      <FaReact key='react' style={{ color: "#61DAFB" }} />,
+      <FaNodeJs key='nodejs' style={{ color: "#3C873A" }} />,
     ],
   },
   {
@@ -396,9 +396,9 @@ export const dataAboutPage = [
       "Bootcamp de 5 meses de 2022-2023, donde aprendí HTML, CSS y JavaScript. Me enfoqué en el desarrollo de interfaces interactivas y responsivas, mejorando la experiencia del usuario en aplicaciones web.",
     date: "AGOSTO 2022",
     icons: [
-      <SiHtml5 key="html5" style={{ color: "#E34F26" }} />,
-      <SiCss3 key="css3" style={{ color: "#1572B6" }} />,
-      <SiJavascript key="javascript" style={{ color: "#F7DF1E" }} />,
+      <SiHtml5 key='html5' style={{ color: "#E34F26" }} />,
+      <SiCss3 key='css3' style={{ color: "#1572B6" }} />,
+      <SiJavascript key='javascript' style={{ color: "#F7DF1E" }} />,
     ],
   },
   {
@@ -409,12 +409,12 @@ export const dataAboutPage = [
       "Cursado desde 2014-2019, donde obtuve conocimientos en análisis de sistemas, C++, Access,  resolución de problemas y diseño de sistemas. Desarrollé una sólida base en programación y metodologías de desarrollo.",
     date: "2014-2019",
     icons: [
-      <Computer key="computer" style={{ color: "#6B7280" }} />,
-      <SiMicrosoftaccess key="access" style={{ color: "#A4373A" }} />,
-      <SiCplusplus key="cplusplus" style={{ color: "#00599C" }} />,
+      <Computer key='computer' style={{ color: "#6B7280" }} />,
+      <SiMicrosoftaccess key='access' style={{ color: "#A4373A" }} />,
+      <SiCplusplus key='cplusplus' style={{ color: "#00599C" }} />,
     ],
   },
-];
+]
 
 export const dataCounter = [
   {
@@ -447,21 +447,21 @@ export const dataCounter = [
     text: "Next.js",
     lineRight: false,
   },
-];
+]
 
 export function calculateExperience(startDate: Date): {
-  years: number;
-  months: number;
+  years: number
+  months: number
 } {
-  const currentDate = new Date();
+  const currentDate = new Date()
 
-  let years = currentDate.getFullYear() - startDate.getFullYear();
-  let months = currentDate.getMonth() - startDate.getMonth();
+  let years = currentDate.getFullYear() - startDate.getFullYear()
+  let months = currentDate.getMonth() - startDate.getMonth()
 
   if (months < 0) {
-    years--;
-    months += 12;
+    years--
+    months += 12
   }
 
-  return { years, months };
+  return { years, months }
 }
