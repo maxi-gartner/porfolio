@@ -1,28 +1,28 @@
-"use client";
+"use client"
 
-import { dataCounter } from "@/data";
-import { calculateExperience } from "../data";
-import CountUp from "react-countup";
-import { useState } from "react";
-import { useEffect } from "react";
+import { dataCounter } from "@/data"
+import { calculateExperience } from "../data"
+import CountUp from "react-countup"
+import { useState } from "react"
+import { useEffect } from "react"
 
 const experience = () => {
   return (
-    <div className="flex flex-wrap max-w-3xl mx-auto my-8 w-full justify-center">
+    <div className='flex flex-wrap max-w-3xl mx-auto my-8 w-full justify-center'>
       {dataCounter.map((item) => {
-        const { years, months } = calculateExperience(item.startDate);
-        const totalMonths = years * 12 + months;
-        const [countComplete, setCountComplete] = useState(false);
-        const [countValue, setCountValue] = useState("—"); // Estado para mostrar el guion
+        const { years, months } = calculateExperience(item.startDate)
+        const totalMonths = years * 12 + months
+        const [countComplete, setCountComplete] = useState(false)
+        const [countValue, setCountValue] = useState("—") // Estado para mostrar el guion
 
         useEffect(() => {
           // Iniciar el conteo después de un breve retraso
           const timer = setTimeout(() => {
-            setCountValue(totalMonths.toString());
-          }, 1000); // Cambia a "totalMonths" después de 1 segundo
+            setCountValue(totalMonths.toString())
+          }, 1000) // Cambia a "totalMonths" después de 1 segundo
 
-          return () => clearTimeout(timer); // Limpiar el timer al desmontar
-        }, [totalMonths]);
+          return () => clearTimeout(timer) // Limpiar el timer al desmontar
+        }, [totalMonths])
 
         return (
           <div
@@ -34,10 +34,10 @@ const experience = () => {
               item.lineRight === false ? "border-2 border-transparent pr-4" : ""
             } flex flex-col items-center text-center w-full md:w-1/6 px-3`}
           >
-            <h3 className="text-lg md:text-xl">
-              Experiencia<span className="md:block">{item.text}</span>
+            <h3 className='text-lg md:text-xl'>
+              Experiencia <span className='md:block'>{item.text}</span>
             </h3>
-            <p className="flex mb-1 text-xl md:text-2xl font-extrabold text-secondary flex-col">
+            <p className='flex mb-1 text-xl md:text-2xl font-extrabold text-secondary flex-col'>
               {countComplete ? (
                 <span>
                   {years > 0 && months > 0 ? (
@@ -79,17 +79,17 @@ const experience = () => {
                       onEnd={() => setCountComplete(true)}
                     />
                   )}
-                  <span className="mt-1">
+                  <span className='mt-1'>
                     {totalMonths === 1 ? "mes" : "meses"}
                   </span>
                 </>
               )}
             </p>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default experience;
+export default experience
