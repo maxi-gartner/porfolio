@@ -70,7 +70,7 @@ export const projects = [
   },
   {
     description: "Gestor Empresarial - GestorPro",
-    logo: "/gestorPro.ico",
+    logo: "/gestorProLogo.png",
     url: "#",
     imgSrc: "/gestorpro.png",
     technologies: [
