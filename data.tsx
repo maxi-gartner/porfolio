@@ -35,6 +35,61 @@ import {
 
 export const projects = [
   {
+    description: "Tienda Virtual de Dietética - NutriCerealia",
+    logo: "/nutricerealia_logo.png",
+    url: "https://nutricerealia.com/",
+    imgSrc: "/nutricerealia.png",
+    technologies: [
+      <SiNextdotjs
+        key='nextjs'
+        style={{ color: "#000000", fontSize: "2rem" }}
+      />,
+      <SiReact key='react' style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <SiTypescript
+        key='typescript'
+        style={{ color: "#007ACC", fontSize: "2rem" }}
+      />,
+      <SiTailwindcss
+        key='tailwind'
+        style={{ color: "#38B2AC", fontSize: "2rem" }}
+      />,
+      <SiNodedotjs
+        key='nodejs'
+        style={{ color: "#8CC84B", fontSize: "2rem" }}
+      />,
+      <SiExpress
+        key='express'
+        style={{ color: "#000000", fontSize: "2rem" }}
+      />,
+      <SiMongodb
+        key='mongodb'
+        style={{ color: "#47A248", fontSize: "2rem" }}
+      />,
+      <SiRedux key='redux' style={{ color: "#764ABC", fontSize: "2rem" }} />,
+    ],
+  },
+  {
+    description: "Gestor Empresarial - GestorPro",
+    logo: "/gestorPro.ico",
+    url: "#",
+    imgSrc: "/gestorpro.png",
+    technologies: [
+      <SiReact key='react' style={{ color: "#61DAFB", fontSize: "2rem" }} />,
+      <Computer
+        key='electron'
+        style={{ color: "#47848F", fontSize: "2rem" }}
+      />,
+      <SiTailwindcss
+        key='tailwind'
+        style={{ color: "#38B2AC", fontSize: "2rem" }}
+      />,
+      <SiExpress
+        key='express'
+        style={{ color: "#000000", fontSize: "2rem" }}
+      />,
+    ],
+  },
+  {
     description: "E-commerce Informatico",
     logo: "/bug_fix_logo.png",
     secondLogo: "/bugFixTitle2.png",
