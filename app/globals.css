@@ -51,3 +51,290 @@ main {
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-in-out forwards;
 }
+
+/* CSS Épico y Ultra-Moderno - Agregar al final de tu globals.css */
+
+/* Animaciones personalizadas */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(6, 182, 212, 0.2);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out;
+}
+
+/* Efectos de cristal y glassmorphism */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Proyectos épicos */
+.project-card-epic {
+  @apply relative overflow-hidden bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-epic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(6, 182, 212, 0.2),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.project-card-epic:hover::before {
+  left: 100%;
+}
+
+.project-card-epic:hover {
+  @apply transform scale-105 border-cyan-500/50 shadow-2xl;
+  box-shadow: 0 25px 50px -12px rgba(6, 182, 212, 0.25);
+}
+
+/* Formulario futurista */
+.form-input-epic {
+  @apply w-full px-6 py-4 bg-zinc-900/50 border border-zinc-700 rounded-xl text-white placeholder-zinc-400;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.form-input-epic:focus {
+  @apply border-cyan-500 outline-none;
+  box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.3), 0 0 20px rgba(6, 182, 212, 0.1);
+}
+
+.form-label-epic {
+  @apply block text-sm font-bold text-zinc-400 mb-3 tracking-[0.2em] uppercase;
+}
+
+/* Navbar futurista */
+.navbar-epic {
+  @apply fixed bottom-0 left-0 right-0 z-50;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-item-epic {
+  @apply relative p-4 transition-all duration-300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-item-epic.active {
+  color: rgb(6, 182, 212);
+}
+
+.navbar-item-epic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgb(6, 182, 212), rgb(59, 130, 246));
+  transition: width 0.3s ease;
+}
+
+.navbar-item-epic.active::before,
+.navbar-item-epic:hover::before {
+  width: 80%;
+}
+
+/* Header épico */
+.header-epic {
+  @apply fixed top-0 left-0 right-0 z-50;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Timeline futurista */
+.timeline-epic {
+  position: relative;
+}
+
+.timeline-epic::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgb(6, 182, 212), rgb(147, 51, 234));
+}
+
+.timeline-item-epic {
+  @apply relative py-8 pl-16;
+}
+
+.timeline-item-epic::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 2rem;
+  width: 1rem;
+  height: 1rem;
+  background: linear-gradient(135deg, rgb(6, 182, 212), rgb(59, 130, 246));
+  border-radius: 50%;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+/* Botones épicos */
+.btn-primary-epic {
+  @apply relative px-8 py-4 font-semibold tracking-wide rounded-full overflow-hidden;
+  background: linear-gradient(135deg, rgb(6, 182, 212), rgb(59, 130, 246));
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-epic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgb(59, 130, 246), rgb(147, 51, 234));
+  transition: left 0.3s ease;
+}
+
+.btn-primary-epic:hover::before {
+  left: 0;
+}
+
+.btn-primary-epic span {
+  position: relative;
+  z-index: 10;
+}
+
+.btn-secondary-epic {
+  @apply px-8 py-4 font-semibold tracking-wide rounded-full border-2 border-zinc-700 text-zinc-300;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-epic:hover {
+  @apply border-cyan-400 text-white;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(24, 24, 27);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(6, 182, 212), rgb(59, 130, 246));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgb(34, 197, 218), rgb(79, 149, 251));
+}
+
+/* Selección personalizada */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
+}
+
+/* Responsive mejoras */
+@media (max-width: 768px) {
+  .text-7xl {
+    @apply text-5xl;
+  }
+
+  .text-8xl {
+    @apply text-6xl;
+  }
+}

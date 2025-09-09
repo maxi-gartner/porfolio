@@ -31,6 +31,8 @@ import {
   SiMongodb,
   SiJsonwebtokens,
   SiNextdotjs,
+  SiCsharp,
+  SiMicrosoftsqlserver,
 } from "react-icons/si"
 
 export const projects = [
@@ -90,7 +92,7 @@ export const projects = [
     ],
   },
   {
-    description: "E-commerce Informatico",
+    description: "E-commerce Informático",
     logo: "/bug_fix_logo.png",
     secondLogo: "/bugFixTitle2.png",
     url: "https://bug-fix-two.vercel.app/",
@@ -113,7 +115,7 @@ export const projects = [
     ],
   },
   {
-    description: "E-commerce Articulos de Hogar",
+    description: "E-commerce Artículos de Hogar",
     logo: "/HELogo.png",
     url: "https://home-essentials-front-dev-propia.vercel.app/",
     imgSrc: "/homeEssentials.png",
@@ -144,7 +146,7 @@ export const projects = [
     ],
   },
   {
-    description: "Gestión y Organización de eventos",
+    description: "Gestión y Organización de Eventos",
     logo: "/gestorDeEventosFilter.png",
     url: "https://gestor-de-eventos-front.vercel.app/",
     imgSrc: "/gestorDeEventos.png",
@@ -383,6 +385,22 @@ export const technologies = [
 export const dataAboutPage = [
   {
     id: 1,
+    title: "Tecnicatura Universitaria en Programación",
+    subtitle: "UTN (Universidad Tecnológica Nacional)",
+    description:
+      "Aprendiendo fundamentos sólidos en algoritmos, programación en C# y SQL, así como diseño de sistemas, estructuras de datos y desarrollo de aplicaciones web.",
+    date: "Actualmente",
+    icons: [
+      <SiMysql key='mysql' style={{ color: "#F29111", fontSize: "2rem" }} />,
+      <SiCsharp key='csharp' style={{ color: "#239120", fontSize: "2rem" }} />,
+      <SiMicrosoftsqlserver
+        key='sqlserver'
+        style={{ color: "#CC2927", fontSize: "2rem" }}
+      />,
+    ],
+  },
+  {
+    id: 2,
     title: "Programación Web en PHP y MySQL",
     subtitle: "EducaciónIT",
     description:
@@ -394,7 +412,7 @@ export const dataAboutPage = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Estudios en Next.js",
     subtitle: "Autodidacta",
     description:
@@ -406,7 +424,7 @@ export const dataAboutPage = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Estudios en TypeScript",
     subtitle: "Autodidacta",
     description:
@@ -418,7 +436,7 @@ export const dataAboutPage = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Educación en Base de Datos y SQL",
     subtitle: "EducaciónIT",
     description:
@@ -430,7 +448,7 @@ export const dataAboutPage = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Desarrollador Full Stack",
     subtitle: "MindHub",
     description:
@@ -444,7 +462,7 @@ export const dataAboutPage = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Desarrollador FrontEnd",
     subtitle: "Accenture",
     description:
@@ -457,7 +475,7 @@ export const dataAboutPage = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Técnico Analista de Sistemas",
     subtitle: "ISIV",
     description:
