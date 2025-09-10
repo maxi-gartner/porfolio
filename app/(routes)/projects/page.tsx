@@ -45,18 +45,19 @@ export default function ProjectsEpic() {
   }, [])
 
   const handleProjectClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e: React.MouseEvent<HTMLElement>,
     project: Project
   ) => {
-    if (project.description === "Gestor Empresarial Privado - GestorPro") {
+    if (project.description === "Gestor Empresarial Privado") {
       e.preventDefault()
       setShowModal(true)
       setCurrentImageIndex(0)
-    } else if (
-      project.description === "ARYA – Plataforma de Gestión Comercial"
-    ) {
+    } else if (project.description === "Plataforma de Gestión Comercial") {
       e.preventDefault()
       setShowAryaModal(true)
+    } else if (project.url) {
+      // Redirigimos a la URL del proyecto en nueva pestaña
+      window.open(project.url, "_blank", "noopener,noreferrer")
     }
   }
 
@@ -76,7 +77,7 @@ export default function ProjectsEpic() {
 
   // Función para determinar si es el proyecto ARYA
   const isAryaProject = (description: string) => {
-    return description.includes("ARYA")
+    return description.includes("Plataforma de Gestión Comercial")
   }
 
   return (
@@ -135,26 +136,23 @@ export default function ProjectsEpic() {
 
           <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto'>
             {works.map((project, index) => (
-              <Link
-                href={project.url}
+              <div
                 key={index}
-                className={`project-card-epic group transition-all duration-1000 delay-${
+                className={`project-card-epic group transition-all duration-1000 flex flex-col justify-between delay-${
                   800 + index * 200
                 } ${
                   isLoaded
                     ? "opacity-100 transform-none"
                     : "opacity-0 translate-y-10"
                 } ${
-                  project.description ===
-                  "ARYA – Plataforma de Gestión Comercial"
-                    ? "relative overflow-hidden"
-                    : ""
+                  project.description === "Plataforma de Gestión Comercial"
+                    ? "relative overflow-hidden cursor-pointer"
+                    : " cursor-pointer"
                 }`}
                 onClick={(e) => handleProjectClick(e, project)}
               >
                 {/* Badge "EN DESARROLLO" para ARYA */}
-                {project.description ===
-                  "ARYA – Plataforma de Gestión Comercial" && (
+                {project.description === "Plataforma de Gestión Comercial" && (
                   <div className='absolute top-4 right-4 z-10'>
                     <div className='flex items-center space-x-2 px-3 py-1 bg-yellow-500/90 backdrop-blur-sm rounded-full border border-yellow-400'>
                       <div className='w-2 h-2 bg-yellow-200 rounded-full animate-pulse'></div>
@@ -166,7 +164,7 @@ export default function ProjectsEpic() {
                 )}
 
                 {/* Logo section */}
-                <div className='p-8 bg-zinc-900/30 h-64 backdrop-blur-sm'>
+                <div className='p-8 bg-zinc-900/30  min-h-64 backdrop-blur-sm sm:pb-0'>
                   <div
                     className={`flex items-center justify-center ${
                       isAryaProject(project.description) ? "mb-2" : " mb-6"
@@ -210,7 +208,7 @@ export default function ProjectsEpic() {
                   <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10'></div>
                   <Image
                     src={project.imgSrc}
-                    className='w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500'
+                    className='w-full max-h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500'
                     alt='Project Preview'
                     width={600}
                     height={400}
@@ -225,14 +223,27 @@ export default function ProjectsEpic() {
                       <ExternalLink size={16} className='text-white' />
                       <span className='text-white text-sm font-medium'>
                         {project.description ===
-                        "ARYA – Plataforma de Gestión Comercial"
+                        "Plataforma de Gestión Comercial"
                           ? "Ver Detalles"
+                          : project.description === "Gestor Empresarial Privado"
+                          ? "Ver Capturas"
                           : "Ver Proyecto"}
                       </span>
                     </div>
                   </div>
                 </div>
-              </Link>
+
+                {/* Link condicional para proyectos que no abren modal - AHORA CON target="_blank" */}
+                {project.description !== "Plataforma de Gestión Comercial" &&
+                  project.description !== "Gestor Empresarial Privado" && (
+                    <Link
+                      href={project.url}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='absolute inset-0'
+                    />
+                  )}
+              </div>
             ))}
           </div>
         </div>
@@ -256,6 +267,8 @@ export default function ProjectsEpic() {
             {personalProjects.map((project, index) => (
               <Link
                 href={project.url}
+                target='_blank'
+                rel='noopener noreferrer'
                 key={index}
                 className={`project-card-epic group transition-all duration-1000 delay-${
                   800 + index * 200
@@ -264,7 +277,6 @@ export default function ProjectsEpic() {
                     ? "opacity-100 transform-none"
                     : "opacity-0 translate-y-10"
                 }`}
-                onClick={(e) => handleProjectClick(e, project)}
               >
                 {/* Logo section */}
                 <div className='p-6 bg-zinc-900/30 backdrop-blur-sm h-64 flex flex-col justify-start'>
@@ -339,7 +351,7 @@ export default function ProjectsEpic() {
         </div>
       </div>
 
-      {/* MODAL ÉPICO PARA GESTOR PRO */}
+      {/* MODAL PARA GESTOR PRO */}
       {showModal && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm'>
           <div className='relative max-w-7xl max-h-screen p-6 w-full h-full flex flex-col bg-zinc-900/50 backdrop-blur-xl border border-zinc-700 rounded-3xl m-4'>
@@ -424,12 +436,12 @@ export default function ProjectsEpic() {
         </div>
       )}
 
-      {/* MODAL SIMPLE PARA ARYA - EN DESARROLLO - VERSION RESPONSIVE */}
+      {/* MODAL PARA ARYA - EN DESARROLLO */}
       {showAryaModal && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-2 sm:p-4'>
           <div className='relative w-full h-full sm:h-auto sm:max-w-4xl sm:max-h-[90vh] p-4 sm:p-8 bg-zinc-900/50 backdrop-blur-xl border border-zinc-700 rounded-2xl sm:rounded-3xl overflow-y-auto'>
             {/* Header del modal */}
-            <div className='flex items-center justify-between mb-4 sm:mb-6 sticky -top-4 bg-zinc-900/80 backdrop-blur-xl -m-4 sm:-m-8 p-4 sm:p-8 rounded-t-2xl sm:rounded-t-3xl border-b border-zinc-700/50'>
+            <div className='flex items-center justify-between mb-4 sm:mb-6 sticky -top-4 sm:-top-8 bg-zinc-900/80 backdrop-blur-xl -m-4 sm:-m-8 p-4 sm:p-8 rounded-t-2xl sm:rounded-t-3xl border-b border-zinc-700/50'>
               <div className='flex items-center space-x-2 sm:space-x-3'>
                 <Image
                   src='/arya_logo.jpg'
