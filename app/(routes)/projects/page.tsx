@@ -3,9 +3,9 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { X, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
-import { projects } from "@/data"
+import { works, personalProjects } from "@/data"
 
-// Tipos para TypeScript
+// Tipos para TypeScript - secondLogo es opcional para que funcione con ambos arrays
 interface Project {
   description: string
   logo: string
@@ -36,6 +36,7 @@ const gestorProImages = [
 
 export default function ProjectsEpic() {
   const [showModal, setShowModal] = useState(false)
+  const [showAryaModal, setShowAryaModal] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -47,10 +48,15 @@ export default function ProjectsEpic() {
     e: React.MouseEvent<HTMLAnchorElement>,
     project: Project
   ) => {
-    if (project.description === "Gestor Empresarial - GestorPro") {
+    if (project.description === "Gestor Empresarial Privado - GestorPro") {
       e.preventDefault()
       setShowModal(true)
       setCurrentImageIndex(0)
+    } else if (
+      project.description === "ARYA – Plataforma de Gestión Comercial"
+    ) {
+      e.preventDefault()
+      setShowAryaModal(true)
     }
   }
 
@@ -66,6 +72,11 @@ export default function ProjectsEpic() {
 
   const goToImage = (index: number) => {
     setCurrentImageIndex(index)
+  }
+
+  // Función para determinar si es el proyecto ARYA
+  const isAryaProject = (description: string) => {
+    return description.includes("ARYA")
   }
 
   return (
@@ -122,44 +133,59 @@ export default function ProjectsEpic() {
             <div className='h-px w-20 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto'></div>
           </div>
 
-          <div className='grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto'>
-            {projects.slice(0, 2).map((project, index) => (
+          <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto'>
+            {works.map((project, index) => (
               <Link
                 href={project.url}
                 key={index}
                 className={`project-card-epic group transition-all duration-1000 delay-${
-                  400 + index * 200
+                  800 + index * 200
                 } ${
                   isLoaded
                     ? "opacity-100 transform-none"
                     : "opacity-0 translate-y-10"
+                } ${
+                  project.description ===
+                  "ARYA – Plataforma de Gestión Comercial"
+                    ? "relative overflow-hidden"
+                    : ""
                 }`}
                 onClick={(e) => handleProjectClick(e, project)}
               >
+                {/* Badge "EN DESARROLLO" para ARYA */}
+                {project.description ===
+                  "ARYA – Plataforma de Gestión Comercial" && (
+                  <div className='absolute top-4 right-4 z-10'>
+                    <div className='flex items-center space-x-2 px-3 py-1 bg-yellow-500/90 backdrop-blur-sm rounded-full border border-yellow-400'>
+                      <div className='w-2 h-2 bg-yellow-200 rounded-full animate-pulse'></div>
+                      <span className='text-yellow-900 text-xs font-bold'>
+                        EN DESARROLLO
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 {/* Logo section */}
-                <div className='p-8 bg-zinc-900/30 backdrop-blur-sm'>
-                  <div className='flex items-center justify-center mb-6'>
+                <div className='p-8 bg-zinc-900/30 h-64 backdrop-blur-sm'>
+                  <div
+                    className={`flex items-center justify-center ${
+                      isAryaProject(project.description) ? "mb-2" : " mb-6"
+                    }`}
+                  >
                     <div className='relative'>
                       <div className='absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl blur-lg group-hover:blur-md transition-all duration-300'></div>
                       <Image
                         src={project.logo}
-                        className='relative w-full p-3 h-16 object-contain rounded-xl'
+                        className={`relative w-full object-contain rounded-xl ${
+                          isAryaProject(project.description)
+                            ? "h-20 p-1"
+                            : "h-16 p-3"
+                        }`}
                         alt='Project Logo'
                         width={200}
                         height={200}
                       />
                     </div>
-                    {/* {project.secondLogo && (
-                      <div className='relative ml-4'>
-                        <Image
-                          src={project.secondLogo}
-                          className='w-24 h-16 object-contain rounded-xl'
-                          alt='Secondary Logo'
-                          width={200}
-                          height={200}
-                        />
-                      </div>
-                    )} */}
                   </div>
 
                   <h3 className='text-2xl font-bold text-white text-center mb-4 group-hover:text-cyan-400 transition-colors duration-300'>
@@ -198,7 +224,10 @@ export default function ProjectsEpic() {
                     <div className='flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300'>
                       <ExternalLink size={16} className='text-white' />
                       <span className='text-white text-sm font-medium'>
-                        Ver Proyecto
+                        {project.description ===
+                        "ARYA – Plataforma de Gestión Comercial"
+                          ? "Ver Detalles"
+                          : "Ver Proyecto"}
                       </span>
                     </div>
                   </div>
@@ -224,10 +253,10 @@ export default function ProjectsEpic() {
           </div>
 
           <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto'>
-            {projects.slice(2).map((project, index) => (
+            {personalProjects.map((project, index) => (
               <Link
                 href={project.url}
-                key={index + 2}
+                key={index}
                 className={`project-card-epic group transition-all duration-1000 delay-${
                   800 + index * 200
                 } ${
@@ -389,6 +418,196 @@ export default function ProjectsEpic() {
               <div className='text-zinc-400 text-sm text-center mt-4'>
                 Usa las flechas del teclado o los botones para navegar • ESC
                 para cerrar
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL SIMPLE PARA ARYA - EN DESARROLLO - VERSION RESPONSIVE */}
+      {showAryaModal && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-2 sm:p-4'>
+          <div className='relative w-full h-full sm:h-auto sm:max-w-4xl sm:max-h-[90vh] p-4 sm:p-8 bg-zinc-900/50 backdrop-blur-xl border border-zinc-700 rounded-2xl sm:rounded-3xl overflow-y-auto'>
+            {/* Header del modal */}
+            <div className='flex items-center justify-between mb-4 sm:mb-6 sticky -top-4 bg-zinc-900/80 backdrop-blur-xl -m-4 sm:-m-8 p-4 sm:p-8 rounded-t-2xl sm:rounded-t-3xl border-b border-zinc-700/50'>
+              <div className='flex items-center space-x-2 sm:space-x-3'>
+                <Image
+                  src='/arya_logo.jpg'
+                  alt='ARYA Logo'
+                  width={40}
+                  height={40}
+                  className='sm:w-12 sm:h-12 rounded-lg sm:rounded-xl'
+                />
+                <div>
+                  <h2 className='text-white text-lg sm:text-2xl font-bold'>
+                    ARYA
+                  </h2>
+                  <p className='text-zinc-400 text-xs sm:text-sm'>
+                    Plataforma de Gestión Comercial
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowAryaModal(false)}
+                className='p-2 sm:p-3 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-full transition-all duration-200'
+              >
+                <X size={20} className='sm:w-6 sm:h-6' />
+              </button>
+            </div>
+
+            {/* Badge de estado */}
+            <div className='flex justify-center mb-4 sm:mb-6'>
+              <div className='flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-yellow-500/20 backdrop-blur-sm rounded-full border border-yellow-500/30'>
+                <div className='w-2 sm:w-3 h-2 sm:h-3 bg-yellow-400 rounded-full animate-pulse'></div>
+                <span className='text-yellow-300 font-medium text-sm sm:text-base'>
+                  PROYECTO EN DESARROLLO
+                </span>
+              </div>
+            </div>
+
+            {/* Contenido principal */}
+            <div className='text-center space-y-4 sm:space-y-6'>
+              <p className='text-zinc-300 text-base sm:text-lg'>
+                🚧 Este proyecto está actualmente en{" "}
+                <strong className='text-white'>fase de desarrollo</strong>
+              </p>
+
+              <div className='p-3 sm:p-4 bg-zinc-800/30 rounded-xl border border-zinc-600'>
+                <h3 className='text-white font-bold mb-2 text-sm sm:text-base'>
+                  Stack Tecnológico:
+                </h3>
+                <p className='text-zinc-300 text-xs sm:text-sm'>
+                  Next.js 14 • TypeScript • .NET 8 • PostgreSQL
+                </p>
+              </div>
+
+              {/* Módulos principales */}
+              <div className='text-left space-y-3 sm:space-y-4'>
+                <h3 className='text-lg sm:text-xl font-bold text-white text-center mb-3 sm:mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>
+                  Funcionalidades Completas
+                </h3>
+
+                {/* Ventas */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-cyan-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    💰 Módulo de Ventas
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• Facturación electrónica AFIP (A, B, C, M)</li>
+                    <li>• Carga rápida con códigos de barras/QR</li>
+                    <li>• Múltiples cajas y sucursales</li>
+                    <li>• Control de vendedores y comisiones</li>
+                    <li>• Integración con impresoras fiscales</li>
+                  </ul>
+                </div>
+
+                {/* Stock */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-green-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    📦 Módulo de Stock
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• Inventario en tiempo real</li>
+                    <li>• Alertas automáticas de reposición</li>
+                    <li>• Múltiples depósitos</li>
+                    <li>• Carga masiva de productos</li>
+                    <li>• Gestión completa de proveedores</li>
+                  </ul>
+                </div>
+
+                {/* Clientes */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-purple-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    👥 Módulo de Clientes
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• Cuentas corrientes y saldos</li>
+                    <li>• Historial completo de compras</li>
+                    <li>• Segmentación avanzada</li>
+                    <li>• Recordatorios automáticos de pago</li>
+                    <li>• Programas de fidelización</li>
+                  </ul>
+                </div>
+
+                {/* Pagos */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-yellow-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    💳 Módulo de Pagos
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• MercadoPago, Modo, Payway integrados</li>
+                    <li>
+                      • Pagos múltiples (efectivo, tarjeta, transferencias)
+                    </li>
+                    <li>• Arqueo de caja automático</li>
+                    <li>• Control de ingresos y egresos</li>
+                  </ul>
+                </div>
+
+                {/* Reportes */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-orange-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    📊 Reportes y Analytics
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• Dashboard interactivo en tiempo real</li>
+                    <li>• Análisis de márgenes y rentabilidad</li>
+                    <li>• Ranking de productos más vendidos</li>
+                    <li>• Exportación Excel, PDF, CSV</li>
+                    <li>• Gráficos dinámicos y comparativas</li>
+                  </ul>
+                </div>
+
+                {/* Integraciones */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-pink-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    🔗 Integraciones Avanzadas
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• Integración completa AFIP y ARBA</li>
+                    <li>• Conexión MercadoLibre, TiendaNube, Shopify</li>
+                    <li>• API REST para integraciones externas</li>
+                    <li>• App móvil nativa</li>
+                    <li>• Modo offline para facturación sin internet</li>
+                    <li>• Multi-idioma y multi-moneda</li>
+                  </ul>
+                </div>
+
+                {/* Servicios */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-blue-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    🔧 Módulo de Servicios (Opcional)
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• Registro de trabajos y reparaciones</li>
+                    <li>• Agenda de servicios programados</li>
+                    <li>• Alertas de mantenimientos periódicos</li>
+                    <li>• Control de instalaciones</li>
+                  </ul>
+                </div>
+
+                {/* Seguridad */}
+                <div className='bg-zinc-800/20 p-2.5 sm:p-3 rounded-lg border border-zinc-700'>
+                  <h4 className='text-red-400 font-semibold mb-1.5 sm:mb-2 flex items-center text-sm sm:text-base'>
+                    🔒 Seguridad y Usuarios
+                  </h4>
+                  <ul className='text-zinc-300 text-xs sm:text-sm space-y-0.5 sm:space-y-1'>
+                    <li>• Control de accesos y roles avanzados</li>
+                    <li>• Autenticación de dos pasos (2FA)</li>
+                    <li>• Registro completo de actividad</li>
+                    <li>• Copias de seguridad automáticas</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className='pt-3 sm:pt-4 border-t border-zinc-700'>
+                <p className='text-cyan-400 font-medium text-base sm:text-lg'>
+                  ⏳ Fecha estimada de lanzamiento: Q1 2026
+                </p>
+                <p className='text-zinc-400 text-xs sm:text-sm mt-2'>
+                  Una solución empresarial completa para transformar tu gestión
+                  comercial
+                </p>
               </div>
             </div>
           </div>

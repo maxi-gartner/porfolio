@@ -33,18 +33,42 @@ import {
   SiNextdotjs,
   SiCsharp,
   SiMicrosoftsqlserver,
+  SiDotnet,
+  SiPostgresql,
 } from "react-icons/si"
 
-export const projects = [
+export const works = [
   {
-    description: "Tienda Virtual de Dietética - NutriCerealia",
+    description: "Plataforma de Gestión Comercial",
+    logo: "/arya_logo.jpg",
+    url: "#",
+    imgSrc: "/arya.png",
+    technologies: [
+      <SiNextdotjs
+        key='nextjs'
+        style={{ color: "#ffffff", fontSize: "2rem" }}
+      />,
+      <SiTypescript
+        key='typescript'
+        style={{ color: "#007ACC", fontSize: "2rem" }}
+      />,
+      <SiDotnet key='dotnet' style={{ color: "#512BD4", fontSize: "2rem" }} />,
+      <SiCsharp key='csharp' style={{ color: "#239120", fontSize: "2rem" }} />,
+      <SiPostgresql
+        key='postgresql'
+        style={{ color: "#336791", fontSize: "2rem" }}
+      />,
+    ],
+  },
+  {
+    description: "Tienda Virtual de Dietética",
     logo: "/nutricerealia_logo.png",
     url: "https://nutricerealia.com/",
     imgSrc: "/nutricerealia.png",
     technologies: [
       <SiNextdotjs
         key='nextjs'
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#ffffff", fontSize: "2rem" }}
       />,
       <SiReact key='react' style={{ color: "#61DAFB", fontSize: "2rem" }} />,
       <SiTypescript
@@ -57,11 +81,11 @@ export const projects = [
       />,
       <SiNodedotjs
         key='nodejs'
-        style={{ color: "#8CC84B", fontSize: "2rem" }}
+        style={{ color: "#4bc866", fontSize: "2rem" }}
       />,
       <SiExpress
         key='express'
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#adff55", fontSize: "2rem" }}
       />,
       <SiMongodb
         key='mongodb'
@@ -71,7 +95,7 @@ export const projects = [
     ],
   },
   {
-    description: "Gestor Empresarial - GestorPro",
+    description: "Gestor Empresarial Privado",
     logo: "/gestorProLogo.png",
     url: "#",
     imgSrc: "/gestorpro.png",
@@ -87,10 +111,13 @@ export const projects = [
       />,
       <SiExpress
         key='express'
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#adff55", fontSize: "2rem" }}
       />,
     ],
   },
+]
+
+export const personalProjects = [
   {
     description: "E-commerce Informático",
     logo: "/bug_fix_logo.png",
@@ -133,7 +160,7 @@ export const projects = [
       />,
       <SiExpress
         key='express'
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#adff55", fontSize: "2rem" }}
       />,
       <SiMongodb
         key='mongodb'
@@ -164,7 +191,7 @@ export const projects = [
       />,
       <SiExpress
         key='express'
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#adff55", fontSize: "2rem" }}
       />,
       <SiMongodb
         key='mongodb'
@@ -184,7 +211,7 @@ export const projects = [
     technologies: [
       <SiNextdotjs
         key='nextjs'
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#ffffff", fontSize: "2rem" }}
       />,
       <SiReact key='react' style={{ color: "#61DAFB", fontSize: "2rem" }} />,
       <SiTailwindcss
@@ -266,7 +293,7 @@ export const technologies = [
     title: "Express",
     icon: (
       <SiExpress
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#adff55", fontSize: "2rem" }}
         title='Express'
       />
     ),
@@ -316,7 +343,7 @@ export const technologies = [
     title: "Next.js",
     icon: (
       <SiNextdotjs
-        style={{ color: "#000000", fontSize: "2rem" }}
+        style={{ color: "#ffffff", fontSize: "2rem" }}
         title='Next.js'
       />
     ),
@@ -419,7 +446,7 @@ export const dataAboutPage = [
       "Comencé a estudiar Next.js en mayo de 2024 para expandir mis habilidades en desarrollo frontend y crear aplicaciones web más rápidas y eficientes con características como la generación de sitios estáticos y la optimización del rendimiento.",
     date: "Mayo 2024",
     icons: [
-      <SiNextdotjs key='nextjs' style={{ color: "#000000" }} />,
+      <SiNextdotjs key='nextjs' style={{ color: "#ffffff" }} />,
       <FaReact key='react' style={{ color: "#61DAFB" }} />,
     ],
   },
@@ -456,7 +483,7 @@ export const dataAboutPage = [
     date: "ABRIL 2023",
     icons: [
       <SiMongodb key='mongodb' style={{ color: "#4DB33D" }} />,
-      <SiExpress key='express' style={{ color: "#000000" }} />,
+      <SiExpress key='express' style={{ color: "#adff55" }} />,
       <FaReact key='react' style={{ color: "#61DAFB" }} />,
       <FaNodeJs key='nodejs' style={{ color: "#3C873A" }} />,
     ],
