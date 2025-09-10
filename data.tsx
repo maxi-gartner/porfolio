@@ -220,25 +220,25 @@ export const socialNetworks = [
 export const itemsNavbar = [
   {
     id: 1,
-    title: "Home",
+    title: "Inicio",
     icon: <HomeIcon size={25} color='#fff' strokeWidth={1} />,
     link: "/",
   },
   {
     id: 2,
-    title: "User",
+    title: "Perfil",
     icon: <UserRound size={25} color='#fff' strokeWidth={1} />,
     link: "/aboutMe",
   },
   {
     id: 3,
-    title: "Projects",
+    title: "Proyectos",
     icon: <FolderOpen size={25} color='#fff' strokeWidth={1} />, // Cambiado a FolderOpen
     link: "/projects",
   },
   {
     id: 5,
-    title: "Contact",
+    title: "Contacto",
     icon: <Mail size={25} color='#fff' strokeWidth={1} />, // Cambiado a Mail
     link: "/contact",
   },
