@@ -20,7 +20,7 @@ const Header = () => {
 
   // Función para abrir WhatsApp con mensaje personalizado
   const openWhatsApp = () => {
-    const phoneNumber = "5491234567890" // Reemplaza con tu número (código país + número sin +)
+    const phoneNumber = "543435329910" // Reemplaza con tu número (código país + número sin +)
     const message = encodeURIComponent(
       "¡Hola Maxi! Vi tu portfolio y me interesa conocer más sobre tus servicios de desarrollo. ¿Podemos conversar?"
     )
